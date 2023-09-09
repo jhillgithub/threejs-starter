@@ -8,6 +8,7 @@ import { createResizer } from "./createResizer";
 import { Loop } from "./loop";
 import { createOrbitControls } from "./createOrbitControls";
 import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { createShaderCube } from "../components/createShaderCube";
 
 export class World {
   private scene: Scene;
@@ -27,12 +28,13 @@ export class World {
     this.scene.add(...lights);
 
     const cube = createCube();
-    this.scene.add(cube);
+    const shaderCube = createShaderCube();
+    this.scene.add(cube, shaderCube);
 
     this.controls = createOrbitControls(this.camera, this.renderer);
 
     this.loop = new Loop(this.camera, this.scene, this.renderer, this.controls);
-    this.loop.updatables.push(cube);
+    this.loop.updatables.push(cube, shaderCube);
   }
 
   render() {

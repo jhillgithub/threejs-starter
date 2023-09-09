@@ -1,6 +1,8 @@
-import { defineConfig } from "astro/config";
 import glsl from "vite-plugin-glsl";
+import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
-  plugins: [glsl()],
+  vite: {
+    plugins: [glsl()],
+  },
 });

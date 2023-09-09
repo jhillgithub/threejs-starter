@@ -12,6 +12,7 @@ export const createCube = () => {
   const geometry = new BoxGeometry(1, 1, 1, 8, 8, 8);
   const material = new MeshStandardMaterial({ color: "hotpink" });
   const cube = new Mesh(geometry, material);
+  cube.position.setX(-1.5);
   cube.rotation.set(-0.5, -0.1, 0.8);
   const quaternion = new Quaternion();
   const axisVector = new Vector3();
