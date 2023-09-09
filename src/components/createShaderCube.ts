@@ -3,10 +3,10 @@ import {
   Color,
   BoxGeometry,
   ShaderMaterial,
-  Mesh,
   Quaternion,
   Vector3,
 } from "three";
+import { TickableMesh } from "./TickableMesh";
 import vertexShader from "../shaders/vertex.glsl";
 import fragmentShader from "../shaders/fragment.glsl";
 const radiansPerSecond = MathUtils.degToRad(30);
@@ -25,13 +25,12 @@ export const createShaderCube = () => {
     vertexShader,
   });
 
-  const mesh = new Mesh(geometry, material);
+  const mesh = new TickableMesh(geometry, material);
   mesh.position.setX(1.5);
 
   const quaternion = new Quaternion();
   const axisVector = new Vector3();
 
-  // @ts-expect-error
   mesh.tick = (delta) => {
     // rotate x
     axisVector.set(1, 0, 0);

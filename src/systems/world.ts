@@ -7,14 +7,12 @@ import { createCube } from "../components/createCube";
 import { createResizer } from "./createResizer";
 import { Loop } from "./loop";
 import { createOrbitControls } from "./createOrbitControls";
-import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { createShaderCube } from "../components/createShaderCube";
 
 export class World {
   private scene: Scene;
   private camera: Camera;
   private renderer: WebGLRenderer;
-  private controls: OrbitControls;
   private loop: Loop;
 
   constructor(container) {
