@@ -17,7 +17,7 @@ export const createCube = () => {
   const quaternion = new Quaternion();
   const axisVector = new Vector3();
 
-  // @ts-ignore
+  // @ts-expect-error
   cube.tick = (delta) => {
     // rotate x
     axisVector.set(1, 0, 0);

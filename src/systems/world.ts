@@ -31,10 +31,10 @@ export class World {
     const shaderCube = createShaderCube();
     this.scene.add(cube, shaderCube);
 
-    this.controls = createOrbitControls(this.camera, this.renderer);
+    const controls = createOrbitControls(this.camera, this.renderer);
 
-    this.loop = new Loop(this.camera, this.scene, this.renderer, this.controls);
-    this.loop.updatables.push(cube, shaderCube);
+    this.loop = new Loop(this.camera, this.scene, this.renderer, controls);
+    this.loop.updatables.push(cube, shaderCube, controls);
   }
 
   render() {
