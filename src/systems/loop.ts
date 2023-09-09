@@ -1,5 +1,4 @@
 import { Clock, Scene, Camera, WebGLRenderer } from "three";
-import type { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const clock = new Clock();
 
@@ -7,14 +6,12 @@ export class Loop {
   camera: Camera;
   scene: Scene;
   renderer: WebGLRenderer;
-  controls: OrbitControls;
   updatables: any[];
 
-  constructor(camera, scene, renderer, controls) {
+  constructor(camera, scene, renderer) {
     this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
-    this.controls = controls;
     this.updatables = [];
   }
 
