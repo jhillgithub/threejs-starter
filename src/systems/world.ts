@@ -31,7 +31,7 @@ export class World {
 
     const controls = createOrbitControls(this.camera, this.renderer);
 
-    this.loop = new Loop(this.camera, this.scene, this.renderer, controls);
+    this.loop = new Loop(this.camera, this.scene, this.renderer);
     this.loop.updatables.push(cube, shaderCube, controls);
   }
 
